@@ -1,0 +1,20 @@
+<%= form_with scope: :pet, url: pets_path, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Kind %><br>
+    <%= form.select :kind, options_for_select([["Cat", "c"], ["Dog", "d"]]) %>
+  </p>
+ 
+  <p>
+    <%= form.label :Description %><br>
+    <%= form.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
