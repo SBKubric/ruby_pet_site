@@ -6,9 +6,12 @@
 
   <p>
     <%= form.label :Kind %><br>
-    <%= form.select :kind, options_for_select([["Cat", "c"], ["Dog", "d"]]) %>
+    <%= form.select :kind, options_for_select([%w(Cat c), %w(Dog d)]) %>
   </p>
- 
+
+  <p>
+    <%= form.file_field :avatar %>
+  </p>
   <p>
     <%= form.label :Description %><br>
     <%= form.text_area :description %>

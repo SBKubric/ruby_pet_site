@@ -1,5 +1,5 @@
 <h1>Listing pets</h1>
- 
+ <%= link_to 'Добавить друга', new_pet_path %>
 <table>
   <tr>
     <th>Name</th>
@@ -11,6 +11,7 @@
     <tr>
       <td><%= pet.name %></td>
       <td><%= pet.kind %></td>
+      <td><%= image_tag(pet.avatar) %></td>
       <td><%= pet.description %></td>
       <td><%= link_to 'Show', pet_path(pet) %></td>
     </tr>
