@@ -4,7 +4,11 @@
 
 body {
   .navbar {
-    padding: 1% 1% 0.5%;
+    padding: 1% 1% 1% 0.5%;
+    min-height: 100px;
+    .logo {
+      width: fit-content;
+    }
   }
 
   main {
@@ -15,10 +19,6 @@ body {
       .grid-item {
         margin: 1rem;
       }
-    }
-
-    .form_container {
-
     }
   }
 }
