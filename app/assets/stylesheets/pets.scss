@@ -17,7 +17,10 @@ body {
       display: grid;
       grid-template-columns: auto auto auto auto auto;
       .grid-item {
-        margin: 1rem;
+        margin: 0.5rem;
+        min-width: 5rem;
+        max-width: 20rem;
+
       }
     }
   }
