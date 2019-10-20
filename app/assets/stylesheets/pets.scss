@@ -1,3 +1,25 @@
 // Place all the styles related to the Pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  .navbar {
+    padding: 1% 1% 0.5%;
+  }
+
+  main {
+    margin: 2%;
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      .grid-item {
+        margin: 1rem;
+      }
+    }
+
+    .form_container {
+
+    }
+  }
+}
+

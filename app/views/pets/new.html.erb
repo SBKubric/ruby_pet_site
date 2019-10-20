@@ -1,23 +1,54 @@
-<%= form_with scope: :pet, url: pets_path, local: true do |form| %>
-  <p>
-    <%= form.label :Name %><br>
-    <%= form.text_field :name %>
-  </p>
+<header>
+  <nav class="navbar" role="navigation">
+    <div class="title">
+      Новый дом для друга
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="columns">
+    <div class="column"></div>
+    <div class="column card">
+      <%= form_with scope: :pet, url: pets_path, local: true do |form| %>
+        <div class="field">
+          <%= form.label "Кличка", class: "label" %>
+          <%= form.text_field :name, class: "input", type: "text" %>
+        </div>
 
-  <p>
-    <%= form.label :Kind %><br>
-    <%= form.select :kind, options_for_select([%w(Cat c), %w(Dog d)]) %>
-  </p>
+        <div class="field">
+          <%= form.label "Вид", class: "label" %>
+        <div class="select">
+          <%= form.select :kind, options_for_select([%w(Кошка c), %w(Собака d)]) %>
+        </div>
+        </div>
 
-  <p>
-    <%= form.file_field :avatar %>
-  </p>
-  <p>
-    <%= form.label :Description %><br>
-    <%= form.text_area :description %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+        <div class="field">
+          <%= form.label "Пол", class: "label" %>
+          <div class="select">
+            <%= form.select :sex, options_for_select([%w(Самец m), %w(Самка f)]) %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.file_field :avatar, class: "file-input" %>
+        </div>
+        <div class="field">
+          <%= form.label :Description, class: "label" %>
+          <%= form.text_area :description, class: "textarea" %>
+        </div>
+
+        <div class="field">
+          <%= form.submit class: "button is-primary" %>
+        </div>
+        </div>
+        <div class="column"></div>
+        </div>
+        </main>
+        <footer>
+          <div class="content has-text-right">
+            Сделано <strong>sbkubric</strong>.
+            <a href="https://www.github.com/sbkubric">GitHub</a>
+            2019
+          </div>
+        </footer>
+      <% end %>
