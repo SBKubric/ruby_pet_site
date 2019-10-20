@@ -2,11 +2,13 @@
 <header>
   <nav class="navbar">
     <div class="navbar-brand">
+      <a href=<%= pets_path %>>
         <%= image_tag "logo.png", class: "logo" %>
+      </a>
     </div>
     <div class="navbar-start">
       <div class="navbar-item">
-        <div class="title is-1">Возьми себе друга!</div>
+        <div class="title is-1">Найди себе друга!</div>
       </div>
     </div>
     <div class="navbar-end">
@@ -25,24 +27,28 @@
       <figure class="grid-item box image">
         <%= image_tag(pet.avatar) %>
         <figcaption>
-          <div>
+          <span>
             <span class="name subtitle"><%= pet.name %></span>
-            <%=
-              pet.kind == 'c' ? content_tag(:span, nil, class: "fas fa-cat") : content_tag(:span, nil, class: "fas fa-dog")
-            %>
-            <%=
-              pet.sex == 'm' ? content_tag(:span, nil, class: "fas fa-mars") : content_tag(:span, nil, class: "fas fa-venus")
-            %>
-          </div>
-          <div class="description">
-            <%= pet.description %>
-          </div>
-        </figcaption>
-        <%#= link_to 'Show', pet_path(pet) %>
+            <span class="icon">
+              <%=
+                pet.kind == 'c' ? content_tag(:span, nil, class: "fas fa-cat") : content_tag(:span, nil, class: "fas fa-dog")
+              %>
+            </span>
+            <span class="icon">
+              <%=
+                pet.sex == 'm' ? content_tag(:span, nil, class: "fas fa-mars") : content_tag(:span, nil, class: "fas fa-venus")
+              %>
+            </span>
+          </span>
+      <div class="description">
+        <%= pet.description %>
+      </div>
+      </figcaption>
+      <%#= link_to 'Show', pet_path(pet) %>
       </figure>
     <% end %>
-  </div>
-</main>
+    </div>
+    </main>
 
 <footer class="footer">
   <div class="content has-text-right">
