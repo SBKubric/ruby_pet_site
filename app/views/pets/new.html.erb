@@ -9,6 +9,7 @@
   <div class="columns">
     <div class="column"></div>
     <div class="column card">
+
       <%= form_with scope: :pet, url: pets_path, local: true do |form| %>
         <div class="field">
           <%= form.label "Кличка", class: "label" %>
@@ -17,9 +18,9 @@
 
         <div class="field">
           <%= form.label "Вид", class: "label" %>
-        <div class="select">
-          <%= form.select :kind, options_for_select([%w(Кошка c), %w(Собака d)]) %>
-        </div>
+          <div class="select">
+            <%= form.select :kind, options_for_select([%w(Кошка c), %w(Собака d)]) %>
+          </div>
         </div>
 
         <div class="field">
@@ -29,9 +30,20 @@
           </div>
         </div>
 
-        <div class="field">
-          <%= form.file_field :avatar, class: "file-input" %>
+        <div class="file field">
+          <label class="file-label">
+            <%= form.file_field :avatar, class: "file-input" %>
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Choose a file…
+              </span>
+            </span>
+          </label>
         </div>
+
         <div class="field">
           <%= form.label :Description, class: "label" %>
           <%= form.text_area :description, class: "textarea" %>
@@ -40,6 +52,7 @@
         <div class="field">
           <%= form.submit class: "button is-primary" %>
         </div>
+
         </div>
         <div class="column"></div>
         </div>

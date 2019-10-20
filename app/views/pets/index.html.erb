@@ -1,15 +1,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<h1>Listing pets</h1>
- <%= link_to 'Добавить друга', new_pet_path %>
+<header>
+  <nav class="navbar">
+    <div class="navbar-brand">
 
+    </div>
+    <div class="navbar-start">
+      <div class="title">Listing pets</div>
+    </div>
+    <div class="navbar-end">
+      <div class="buttons">
+        <%= link_to 'Добавить друга', new_pet_path, class: "button is-primary" %>
+      </div>
+    </div>
+  </nav>
+</header>
 
-  <% @pets.each do |pet| %>
-    <tr>
-      <td><%= pet.name %></td>
-      <td><%= pet.kind %>
-      <%= image_tag(pet.avatar) %>
-      <td><%= pet.description %></td>
-      <td><%= link_to 'Show', pet_path(pet) %></td>
-    </tr>
-<% end %>
-</table>
+<main>
+  <div class="grid-container">
+    <% @pets.each do |pet| %>
+      <figure class="grid-item box image">
+        <%= image_tag(pet.avatar) %>
+        <figcaption>
+          <div>
+            <span class="name subtitle"><%= pet.name %></span>
+            <%=
+              pet.kind == 'c' ? content_tag(:span, nil, class: "fas fa-cat") : content_tag(:span, nil, class: "fas fa-dog")
+            %>
+            <%=
+              pet.sex == 'm' ? content_tag(:span, nil, class: "fas fa-mars") : content_tag(:span, nil, class: "fas fa-venus")
+            %>
+          </div>
+          <div class="description">
+            <%= pet.description %>
+          </div>
+        </figcaption>
+        <%#= link_to 'Show', pet_path(pet) %>
+      </figure>
+    <% end %>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="content has-text-right">
+    Сделано <strong>sbkubric</strong>.
+    <a href="https://www.github.com/sbkubric">GitHub</a>
+    2019
+  </div>
+</footer>
